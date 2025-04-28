@@ -56,13 +56,14 @@ Pentru a compila proiectul:
 1. Mod Simplu
    
     ./snapshot_creator /home/user/Documents /home/user/Downloads
+   
 Va crea fișierele:
 
     /home/user/Documents/snapshot1_.txt
    
     /home/user/Downloads/snapshot2_.txt
 
-2. Mod cu director specificat (-o)
+3. Mod cu director specificat (-o)
    
     ./snapshot_creator -o /home/user/Snapshots /home/user/Documents /home/user/Pictures
    
