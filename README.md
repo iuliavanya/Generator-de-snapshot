@@ -1,27 +1,41 @@
 📂 **Generator-de-snapshot**
 Acest proiect C creează snapshot-uri (capturi de stare) ale directoarelor specificate. Fiecare snapshot conține informații despre fișierele dintr-un director: nume, tip, inode, și timestamp-uri de acces, modificare și creare.
 
+
 🛠️ **Funcționalități**
+
 Traversează recursiv un director și listează:
+
 Numele fișierelor
+
 Tipul fișierelor (regular file, directory, symlink, etc.)
+
 Numărul inode
+
 Timpul ultimei modificări, accesări și schimbări de status
+
 Creează fișiere de snapshot (.txt) cu toate aceste informații.
+
 Suportă generarea snapshot-urilor în mod normal sau paralel (cu procese copil).
+
 Gestionare robustă a erorilor (pentru fork, open, write, stat, etc.).
 
+
 📋 **Cum funcționează**
+
 Programul are trei moduri de lucru:
+
 1. Mod Simplu (fără procese multiple):
+   
     ./snapshot_creator dir1 dir2 dir3 ...
+   
 Creează câte un snapshot pentru fiecare director în parte.
 
-2. Mod cu director de snapshot (-o):
+3. Mod cu director de snapshot (-o):
     ./snapshot_creator -o <director_snapshot> dir1 dir2 ...
 Salvează toate snapshot-urile într-un director specificat (<director_snapshot>).
 
-3. Mod paralel (-s):
+4. Mod paralel (-s):
     ./snapshot_creator <ceva> <director_snapshot> -s dir1 dir2 ...
 Creează procese copil pentru fiecare director, generând snapshot-uri în paralel.
 
